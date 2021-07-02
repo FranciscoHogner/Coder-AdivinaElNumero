@@ -1,29 +1,35 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import React from "react";
-import { func } from "prop-types";
+import Colors from '../constants/colors';
+import Constants from 'expo-constants';
+import React from 'react';
 
-export default function Header({
-    title
-    }) {
-    return(
+const Header = ({ title }) => {
+  return (
     <View style={styles.header}>
-        <Text style={styles.headerTitle}>{title}</Text>
+      <Text style={styles.headerTitle}>{title}</Text>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   header: {
-    width: "100%",
+    width: '100%',
     height: 90,
-    paddingTop: 36,
-    backgroundColor: '#cbd4c2',
+    paddingTop: 50,
+    backgroundColor: Colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row',
   },
   headerTitle: {
     fontSize: 22,
-    color: 'black',
+    fontFamily: 'open-sans-bold',
+  },
+  image: {
+    width: 20,
+    height: 20,
   }
 });
+
+export default Header;
